@@ -18,7 +18,7 @@ main = xmobar $ defaultConfig {
           ("/home", "/home: <used>/<size> (<usedp>%)")
         ]
         ["-L", "5", "-H", "70", "--normal", "green", "--high", "red"] 10,
-      Run $ Date "%k:%M %a %m/%e/%y" "datetime" 10,
+      Run $ Date "%k:%M %a %m/%d/%y" "datetime" 10,
       Run $ Volume "default" "Master" [] 1, -- Using `Alsa` won't always pick up when the default sink changes.
       Run $ Alsa "default" "Capture" ["-t", "Mic: <volume>% <status>"]
     ],
