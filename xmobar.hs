@@ -10,7 +10,7 @@ main = xmobar $ defaultConfig {
   fgColor = "grey",
   position = TopW L 100,
   commands = [
-      Run $ StdinReader,
+      Run StdinReader,
       Run $ Cpu ["-L", "3", "-H", "70", "--normal", "green", "--high", "red"] 10,
       Run $ Memory ["-t", "Mem: <usedratio>%", "-L", "5", "-H", "70", "--normal", "green", "--high", "red"] 10,
       Run $ DiskU [
@@ -24,5 +24,5 @@ main = xmobar $ defaultConfig {
     ],
   sepChar = "%",
   alignSep = "}{",
-  template = " %StdinReader% }{ %cpu% %memory% Disk: %disku% | %default:Master%%alsa:default:Capture% | %datetime% "
+  template = " %StdinReader% }{ %cpu% %memory% Disk: %disku% | %default:Master% %alsa:default:Capture% | %datetime% "
 }
